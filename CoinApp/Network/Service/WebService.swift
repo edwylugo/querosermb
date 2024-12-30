@@ -53,8 +53,6 @@ class WebService: NSObject, URLSessionDelegate {
         self.addHeader(name: "X-RateLimit-Request-Cost", value: "1")
         self.addHeader(name: "X-ConcurrencyLimit-Limit", value: "1000000")
         self.addHeader(name: "X-ConcurrencyLimit-Remaining", value: "999989")
-//        self.addHeader(name: "X-RateLimit-Reset", value: "2018-01-22T15:25:15.1234567Z")
-//        self.addHeader(name: "Cache-Control", value: kCacheControl)
     }
 
     //MARK: -  Start
