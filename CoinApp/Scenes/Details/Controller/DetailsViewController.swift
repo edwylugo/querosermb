@@ -253,7 +253,6 @@ class DetailsViewController: UIViewController {
     @objc func backController() {
         navigationController?.popViewController(animated: true)
     }
-
 }
 
 // MARK: - CodeView (Views and Constraints)
