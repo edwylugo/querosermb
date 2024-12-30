@@ -65,63 +65,63 @@ final class ExchangesModel {
         }
     }
     
-    func getexchangeID() -> String {
+    func getExchangeID() -> String {
         return exchangeID
     }
     
-    func getwebsite() -> String {
+    func getWebsite() -> String {
         return website
     }
     
-    func getname() -> String {
+    func getName() -> String {
         return name
     }
     
-    func getdataStart() -> String {
+    func getDataStart() -> String {
         return dataStart
     }
     
-    func getdataEnd() -> String {
+    func getDataEnd() -> String {
         return dataEnd
     }
     
-    func getdataQuoteStart() -> String {
+    func getDataQuoteStart() -> String {
         return dataQuoteStart
     }
     
-    func getdataQuoteEnd() -> String {
+    func getDataQuoteEnd() -> String {
         return dataQuoteEnd
     }
     
-    func getdataOrderbookStart() -> String {
+    func getDataOrderbookStart() -> String {
         return dataOrderbookStart
     }
     
-    func getdataOrderbookEnd() -> String {
+    func getDataOrderbookEnd() -> String {
         return dataOrderbookEnd
     }
     
-    func getdataTradeStart() -> String {
+    func getDataTradeStart() -> String {
         return dataTradeStart
     }
     
-    func getdataTradeEnd() -> String {
+    func getDataTradeEnd() -> String {
         return dataTradeEnd
     }
     
-    func getdataSymbolsCount() -> Int {
+    func getDataSymbolsCount() -> Int {
         return dataSymbolsCount
     }
     
-    func getvolume1HrsUsd() -> Double {
+    func getVolume1HrsUsd() -> Double {
         return volume1HrsUsd
     }
     
-    func getvolume1DayUsd() -> Double {
+    func getVolume1DayUsd() -> Double {
         return volume1DayUsd
     }
     
-    func getvolume1MthUsd() -> Double {
+    func getVolume1MthUsd() -> Double {
         return volume1MthUsd
     }
 }
