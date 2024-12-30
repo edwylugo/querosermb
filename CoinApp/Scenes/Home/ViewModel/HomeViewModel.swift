@@ -21,7 +21,6 @@ protocol HomeViewModelProtocol: ViewModelProtocol {
     var isLoading: Observable<Bool> { get }
     var isError: Observable<String?> { get }
     var exchangesModelData: Observable<[ExchangesModel]> { get }
-    var exchangesModelDataWithImage: Observable<[ExchangesModel]> { get }
     func shouldDetailsExchange(exchange_id: String, imageUrl: String)
 }
 
@@ -32,7 +31,6 @@ final class HomeViewModel: HomeViewModelProtocol {
     var isLoading: Observable<Bool>
     var isError: Observable<String?>
     var exchangesModelData: Observable<[ExchangesModel]>
-    var exchangesModelDataWithImage: Observable<[ExchangesModel]>
    
     // MARK: - Initialization
     
@@ -41,7 +39,6 @@ final class HomeViewModel: HomeViewModelProtocol {
         self.isLoading = Observable(false)
         self.isError = Observable("")
         self.exchangesModelData = Observable([])
-        self.exchangesModelDataWithImage = Observable([])
         self.getExchanges()
     }
     
@@ -76,32 +73,9 @@ extension HomeViewModel: WsDelegate {
         if identifier == "getExchanges" {
             if status == .success {
                 if let result = sender.value(forKey: "result") as? NSArray {
-                    if result.count != 0 {
-                        for resultItem in result {
-                                let exchangesModelResponse = ExchangesModel.init(dict: resultItem as! NSDictionary)
-                                    exchangesModelData.value.append(exchangesModelResponse)
-                        }
-                        getExchangesIcons()
-                    }
-                }
-            }
-        }
-        
-        if identifier == "getExchangesIcons" {
-            if status == .success {
-                if let result = sender.value(forKey: "result") as? NSArray {
-                    if result.count != 0 {
-                        for resultItem in result {
-                            let exchangesModelResponse = ExchangesIconsModel.init(dict: resultItem as! NSDictionary)
-                            for item in exchangesModelData.value {
-                                if exchangesModelResponse.exchangeID == item.exchangeID {
-                                    item.icons = exchangesModelResponse.geturl()
-                                    exchangesModelDataWithImage.value.append(item)
-                                } else {
-                                    exchangesModelDataWithImage.value.append(item)
-                                }
-                            }
-                        }
+                    for resultItem in result {
+                        let exchangesModelResponse = ExchangesModel.init(dict: resultItem as! NSDictionary)
+                        exchangesModelData.value.append(exchangesModelResponse)
                     }
                 }
             }

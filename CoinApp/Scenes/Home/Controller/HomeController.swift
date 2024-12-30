@@ -46,7 +46,7 @@ class HomeController: UIViewController {
             }
         }
         
-        viewModel.exchangesModelDataWithImage.bind { exchanges in
+        viewModel.exchangesModelData.bind { exchanges in
             if !exchanges.isEmpty {
                 self.tableView.reloadData()
             }
@@ -82,7 +82,7 @@ extension HomeController: CodeView {
 
 extension HomeController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.exchangesModelDataWithImage.value.count
+        return viewModel.exchangesModelData.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -94,26 +94,26 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
         cell.configure(
             content: ItemTableViewCell.Configuration(
                 itemExchangesView: ItemExchangesView.Configuration(
-                    imageUrl: viewModel.exchangesModelDataWithImage.value[indexPath.row].icons,
+                    imageUrl: viewModel.exchangesModelData.value[indexPath.row].icons,
                     exchangeText: TooltipLabel.Configuration(
-                        captionText: viewModel.exchangesModelDataWithImage.value[indexPath.row].exchangeID,
+                        captionText: viewModel.exchangesModelData.value[indexPath.row].exchangeID,
                         textAlignment: .left,
                         textColor: .subtileLabel()
                     ),
                     nameText: CaptionLabel.Configuration(
-                        captionText: "\(viewModel.exchangesModelDataWithImage.value[indexPath.row].name)",
+                        captionText: "\(viewModel.exchangesModelData.value[indexPath.row].name)",
                         textAlignment: .left,
                         textColor: .titleLabel()
                     ), valueVolumeHrsText: CaptionLabel.Configuration(
-                        captionText: "$ \(viewModel.exchangesModelDataWithImage.value[indexPath.row].volume1HrsUsd)",
+                        captionText: "$ \(viewModel.exchangesModelData.value[indexPath.row].volume1HrsUsd)",
                         textAlignment: .left,
                         textColor: .titleLabel()
                     ), valueVolumeDayText: CaptionLabel.Configuration(
-                        captionText: "$ \(viewModel.exchangesModelDataWithImage.value[indexPath.row].volume1DayUsd)",
+                        captionText: "$ \(viewModel.exchangesModelData.value[indexPath.row].volume1DayUsd)",
                         textAlignment: .left,
                         textColor: .titleLabel()
                     ), valueVolumeMthText: CaptionLabel.Configuration(
-                        captionText: "$ \(viewModel.exchangesModelDataWithImage.value[indexPath.row].volume1MthUsd)",
+                        captionText: "$ \(viewModel.exchangesModelData.value[indexPath.row].volume1MthUsd)",
                         textAlignment: .right,
                         textColor: .titleLabel()
                     )
@@ -124,7 +124,7 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let exchange = viewModel.exchangesModelDataWithImage.value[indexPath.row]
+        let exchange = viewModel.exchangesModelData.value[indexPath.row]
         viewModel.shouldDetailsExchange(exchange_id: exchange.exchangeID, imageUrl: exchange.icons)
     }
 }

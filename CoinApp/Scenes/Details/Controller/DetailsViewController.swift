@@ -26,11 +26,11 @@ class DetailsViewController: UIViewController {
     
     private let iconImageView = UIImageView(frame: .zero)
     
-    private let exchangeLabel = H6Label(translateMask: false).apply {
+    let exchangeLabel = H6Label(translateMask: false).apply {
         $0.isHidden = true
     }
     
-    private let nameLabel = BodyOneLabel(translateMask: false).apply {
+    let nameLabel = BodyOneLabel(translateMask: false).apply {
         $0.isHidden = true
     }
     

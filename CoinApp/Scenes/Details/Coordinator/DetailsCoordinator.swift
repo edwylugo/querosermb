@@ -46,7 +46,7 @@ final class DetailsCoordinator: DetailsCoordinatorProtocol {
 
 extension DetailsCoordinator: DetailsNavigationProtocol {
     func shouldDetailsExchange(exchange_id: String, imageUrl: String) {
-//        let coordinator =
+        
     }
     
     func errorInternet(sender: NSDictionary, error: String, status: WsStatus, code: Int) {
@@ -57,4 +57,3 @@ extension DetailsCoordinator: DetailsNavigationProtocol {
         
     }
 }
-
