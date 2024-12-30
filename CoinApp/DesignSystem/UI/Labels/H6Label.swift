@@ -46,4 +46,3 @@ extension H6Label: Configurable {
         textColor = content.textColor
      }
 }
-

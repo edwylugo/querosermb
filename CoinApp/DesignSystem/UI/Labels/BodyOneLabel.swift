@@ -49,4 +49,3 @@ extension BodyOneLabel: Configurable {
         font = content.font
      }
 }
-

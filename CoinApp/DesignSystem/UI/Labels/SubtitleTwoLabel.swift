@@ -45,4 +45,3 @@ extension SubtitleTwoLabel: Configurable {
         textColor = content.textColor
      }
 }
-

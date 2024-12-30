@@ -7,11 +7,11 @@
 
 import UIKit
 
-class ItemTableViewCell: UITableViewCell {
+final class ItemTableViewCell: UITableViewCell {
     
     // MARK:  - Private Properties
     
-    private var itemExchangesView = ItemExchangesView(translateMask: false)
+    var itemExchangesView = ItemExchangesView(translateMask: false)
     
     // MARK:  - Initializers
     

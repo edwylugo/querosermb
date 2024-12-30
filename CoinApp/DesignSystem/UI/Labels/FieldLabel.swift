@@ -14,7 +14,7 @@ final class FieldLabel: UILabel {
         font = .roboto(type: .regular, size: .fieldLabel)
         textColor = .subtileLabel()
         numberOfLines = 0
-        accessibilityIdentifier = "Título"
+        accessibilityIdentifier = "Title"
     }
 
     @available(*, unavailable)
@@ -47,4 +47,3 @@ extension FieldLabel: Configurable {
         textColor = content.textColor
      }
 }
-

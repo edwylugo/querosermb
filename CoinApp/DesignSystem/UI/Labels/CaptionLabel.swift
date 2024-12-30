@@ -46,4 +46,3 @@ extension CaptionLabel: Configurable {
         textColor = content.textColor
      }
 }
-

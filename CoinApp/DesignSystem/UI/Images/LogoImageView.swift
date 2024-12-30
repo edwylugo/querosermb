@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LogoImageView: UIImageView {
+final class LogoImageView: UIImageView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,7 +22,7 @@ class LogoImageView: UIImageView {
 
 extension LogoImageView: CodeView {
     
-    public func setupAdditionalConfiguration() {
+    func setupAdditionalConfiguration() {
         image = Images.logo.withRenderingMode(.alwaysOriginal)
         contentMode = .scaleAspectFit
     }
