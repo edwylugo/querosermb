@@ -27,10 +27,8 @@ extension UIColor {
         if #available(iOS 13.0, *) {
             return UIColor { (UITraitCollection: UITraitCollection) -> UIColor in
                 if UITraitCollection.userInterfaceStyle == .dark {
-                    // Return the color for Dark Mode
                     return getColor(hex: darkHex, named: named)
                 } else {
-                    // Return the color for Light Mode
                     return getColor(hex: lightHex, named: named)
                 }
             }

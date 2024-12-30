@@ -7,17 +7,9 @@
 
 import Foundation
 
-public protocol Apply {}
+protocol Apply {}
 
-public extension Apply where Self: Any {
-
-    /// Makes it available to set properties with closures just after initializing.
-    ///
-    ///     let label = UILabel().apply {
-    ///       $0.textAlignment = .center
-    ///       $0.textColor = UIColor.black
-    ///       $0.text = "Hello, World!"
-    ///     }
+extension Apply where Self: Any {
     @discardableResult
     func apply(_ block: (Self) -> Void) -> Self {
         block(self)

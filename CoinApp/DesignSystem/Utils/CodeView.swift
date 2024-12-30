@@ -7,14 +7,14 @@
 
 import Foundation
 
-public protocol CodeView {
+protocol CodeView {
     func buildViewHierarchy()
     func setupConstraints()
     func setupAdditionalConfiguration()
     func setupViews()
 }
 
-public extension CodeView {
+extension CodeView {
     func buildViewHierarchy() {}
     func setupConstraints() {}
     func setupAdditionalConfiguration() {}
